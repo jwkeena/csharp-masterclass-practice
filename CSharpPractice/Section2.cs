@@ -8,7 +8,11 @@ namespace CSharpPractice
 {
     class Section2
     {
-        public static void ImplicitTypeConversion()
+
+
+        // implicit conversion means switching a type with no data loss at all, and no chance of throwing an exception
+        // this may only be possible on built-in numeric types
+        public static void DoImplicitConversion()
         {
             int num = 7892435;
             long bigNum = num;
@@ -18,14 +22,26 @@ namespace CSharpPractice
             double myDouble = myFloat;
             Console.WriteLine("The float " + myFloat + " has been converted to a double " + myDouble + " without explicitly re casting it");
         }
-        public static void ExplicitTypeConversion()
+
+        // explicit conversion means switching a type with some data loss, or at least a risk of data loss (and possibly throwing an exception)
+        // if there is such a risk, the compiler requires that you explicitly tell it to convert, which is called a cast.
+        // the cast is you telling the compiler that you're aware some data may be lost and you don't give an f
+        public static void DoExplicitConversion()
         {
             double myDouble = 26.2;
             int myInt;
 
             // casting double to int
-            myInt = (int)myDouble; // reads as: make (=) an integer (int) out of the myDouble variable.
-            Console.WriteLine(myInt); // cuts off the decimal points to fit into int data type
+            myInt = (int)myDouble; // reads as: make (=) an integer (int) out of the myDouble variable. the (int) is the cast
+            Console.WriteLine(myInt); // cuts off the decimal points to fit into int data type. This is the data loss
+        }
+
+        // type conversion
+        public static void DoTypeConversion()
+        {
+            double myDouble = 123.456;
+            string myString = myDouble.ToString();
+            Console.WriteLine(myString);
         }
 
         // simple addition and concatenation
