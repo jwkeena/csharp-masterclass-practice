@@ -8,7 +8,7 @@ namespace CSharpPractice
 {
     class Helpers
     {
-        static public void KeepWindowOpen()
+        public static void KeepWindowOpen()
         {
             Console.ReadLine();
         }

@@ -14,7 +14,8 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
             
             Section1.TurnOnChristmasMode();
-            see(Section3.Multiply(3, 6));
+
+            see(Section3.AddTwoUserInputNumbers());
 
             Helpers.KeepWindowOpen();
         }
