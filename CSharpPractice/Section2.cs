@@ -8,8 +8,6 @@ namespace CSharpPractice
 {
     class Section2
     {
-
-
         // implicit conversion means switching a type with no data loss at all, and no chance of throwing an exception
         // this may only be possible on built-in numeric types
         public static void DoImplicitConversion()

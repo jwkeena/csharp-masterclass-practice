@@ -8,7 +8,7 @@ namespace CSharpPractice
 {
     class Section1
     {
-        // Variables can be declared outside or inside methods, even the Main method of Program class.
+        // Variables can be declared outside or inside methods, even the Main method of Program class. A variable defined outside the methods is called a field
         // But they must be declared inside the class brackets. After the namespace declarationor after the namespace brackets won't work
         static int LanguagesLearned = 1;
 

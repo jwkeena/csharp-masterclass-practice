@@ -8,14 +8,15 @@ namespace CSharpPractice
 {
     class Program
     {
-
         static void Main(string[] args)
         {
+            // Shortcut for Console.WriteLine();
+            Action<object> see = Console.WriteLine;
+            
             Section1.TurnOnChristmasMode();
-            Section2.DoTypeConversion();   
+            see(Section3.Multiply(3, 6));
 
-            // Keeps console window open
-            Console.ReadLine();
+            Helpers.KeepWindowOpen();
         }
 
     }
