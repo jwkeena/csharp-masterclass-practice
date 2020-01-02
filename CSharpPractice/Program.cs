@@ -15,7 +15,7 @@ namespace CSharpPractice
             
             Section1.TurnOnChristmasMode();
 
-            see(Section3.AddTwoUserInputNumbers());
+            Section3.UnaryOperators();
 
             Helpers.KeepWindowOpen();
         }

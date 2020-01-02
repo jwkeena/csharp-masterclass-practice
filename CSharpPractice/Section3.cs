@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CSharpPractice
@@ -35,7 +36,7 @@ namespace CSharpPractice
             Console.WriteLine(input);
         }
 
-        // Using user input to perform an operation
+        // Using multiple user inputs to perform an operation
         public static double AddTwoUserInputNumbers()
         {
             Console.WriteLine("Enter first number to add. Decimals are OK.");
@@ -48,6 +49,75 @@ namespace CSharpPractice
 
             double sum = num1 + num2;
             return sum;
+        }
+
+        // Error handling (try/catch/finally blocks)
+        public static void ConvertUserInputToInt()
+        {
+            Console.WriteLine("Enter a number to be converted to an integer.");
+            string input = Console.ReadLine();
+
+            // The code in the try block will be run, and IF it throws an exception, it won't crash the program. 
+            // In other words this is a way to 
+            try
+            {
+                int inputAsInt = Int32.Parse(input);
+            }
+
+            // Specific exceptions can be logged, if you know what they are in advance
+            // To check which ones are possible, hover the mouse over the suspicious method being called in the try block.
+            catch (FormatException)
+            {
+                Console.WriteLine("Input not parsable as an integer. Remove letters, characters, and decimals.");
+            }
+
+            // A way to catch all exceptions: use the base Exception class.
+            // Here I'm just logging the exception's message to see what kind it is.
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            // This will be executed whenever try and catch blocks are run. 
+            finally
+            {
+                Console.WriteLine("Finally block executed.");
+            }
+        }
+
+        // Composite formatting vs string interpolation
+        public static void DistinguishStringFormattingFromInterpolation()
+        {
+            string programmingLanguage = "C#";
+            object currentMoment = DateTime.Now;
+
+            // Composite formatting. The numbers in braces are replaced by the other arguments in order
+            Console.WriteLine("You are running a program in {0} at {1}", programmingLanguage, currentMoment);
+
+            // String interpolation. Don't forget the '$' before the string
+            Console.WriteLine($"You are running a program in {programmingLanguage} at {currentMoment}");
+
+        }
+
+        // Unary operator examples
+        public static void UnaryOperators()
+        {
+            int num = 1;
+            bool isSunny = false;
+
+            // operator - : multiply by -1
+            Console.WriteLine(-num);
+
+            // operator ! : reverse boolean
+            Console.WriteLine(!isSunny);
+
+            // operator ++ : increment (notice it has to be prefixed to show up on the same line)
+            Console.WriteLine(++num);
+
+            int anotherNum = 99;
+            anotherNum++;
+            Console.WriteLine(anotherNum);
+
         }
     }
 }
