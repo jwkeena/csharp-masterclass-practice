@@ -28,5 +28,17 @@ namespace CSharpPractice
                 Console.WriteLine("It's too cold to run outside");
             }
         }
+
+        public static void TestTryParse(string numberAsString)
+        {
+            // notice that parsedValue is declared inline. It can also be initialized in a separate line above
+            bool success = int.TryParse(numberAsString, out int parsedValue);
+
+            // notice the lack of braces for the condition
+            if (success)
+                Console.WriteLine("Parsing successful - number is " + parsedValue);
+            else
+                Console.WriteLine("Parsing failed.");
+        }
     }
 }

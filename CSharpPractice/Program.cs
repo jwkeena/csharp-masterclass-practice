@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace CSharpPractice
 {
@@ -10,17 +7,20 @@ namespace CSharpPractice
     {
         static void Main(string[] args)
         {
-            Action<object> see = Console.WriteLine; // Shortcut for Console.WriteLine();
+            // Shortcut for Console.WriteLine();
+            Action<object> see = Console.WriteLine; 
 
             // Test section methods here
             Section1.TurnOnChristmasMode();
-            Section4.BasicCondition();
+            Section4.TestTryParse("64dd");
 
+            // Helper functions to smooth development experience
+            if (Debugger.IsAttached)
+                Helpers.CloseWindowEventually();
+            else
+                see("You have to exit the program manually. Use F5 for automatic window closing.");
 
-            Helpers.CloseAfterThreeSeconds(); // Only works in debugging mode
+            Helpers.KeepWindowOpen();
         }
-
-        
-
     }
 }
