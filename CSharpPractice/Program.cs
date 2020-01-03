@@ -10,15 +10,17 @@ namespace CSharpPractice
     {
         static void Main(string[] args)
         {
-            // Shortcut for Console.WriteLine();
-            Action<object> see = Console.WriteLine;
-            
+            Action<object> see = Console.WriteLine; // Shortcut for Console.WriteLine();
+
+            // Test section methods here
             Section1.TurnOnChristmasMode();
+            Section4.BasicCondition();
 
-            Section3.UnaryOperators();
 
-            Helpers.KeepWindowOpen();
+            Helpers.CloseAfterThreeSeconds(); // Only works in debugging mode
         }
+
+        
 
     }
 }

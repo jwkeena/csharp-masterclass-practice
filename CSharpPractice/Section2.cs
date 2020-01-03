@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice
 {
+    // Data Types and Variables
     class Section2
     {
         // implicit conversion means switching a type with no data loss at all, and no chance of throwing an exception

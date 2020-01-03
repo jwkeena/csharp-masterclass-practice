@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice
 {
+    // Hello World and Console Basics
     class Section1
     {
         // Variables can be declared outside or inside methods, even the Main method of Program class. A variable defined outside the methods is called a field

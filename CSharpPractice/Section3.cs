@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice
 {
+    // Functions/Methods
     class Section3
     {
         // Method creation syntax: 
@@ -99,9 +100,9 @@ namespace CSharpPractice
 
         }
 
-        // Unary operator examples
-        public static void UnaryOperators()
+        public static void OperatorExamples()
         {
+            // unary operators
             int num = 1;
             bool isSunny = false;
 
@@ -111,12 +112,18 @@ namespace CSharpPractice
             // operator ! : reverse boolean
             Console.WriteLine(!isSunny);
 
-            // operator ++ : increment (notice it has to be prefixed to show up on the same line)
+            // operators ++, -- : pre-increment, pre-decrement (notice it has to be prefixed to show up on the same line)
             Console.WriteLine(++num);
 
+            // operators ++, -- : post-increment, post-decrement on the next line
             int anotherNum = 99;
             anotherNum++;
             Console.WriteLine(anotherNum);
+
+            // mathematical operators +, *, /, % : add, multiply, divide, modulo
+            // logical operators &&, ||
+            // relational operators <, >, ==, !=, >=, <=
+            // for more operators see https://www.programiz.com/csharp-programming/operators
 
         }
     }
