@@ -12,13 +12,13 @@ namespace CSharpPractice
 
             // Test section methods here
             Section1.TurnOnChristmasMode();
-            Section4.TestTryParse("64dd");
+            Section5.ForLoop();
 
             // Helper functions to smooth development experience
             if (Debugger.IsAttached)
                 Helpers.CloseWindowEventually();
             else
-                see("You have to exit the program manually. Use F5 for automatic window closing.");
+                see("To close, exit the program manually. Use F5 for automated closing.");
 
             Helpers.KeepWindowOpen();
         }
