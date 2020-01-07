@@ -11,8 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine; 
 
             // Test section methods here
-            Section1.TurnOnChristmasMode();
-            Section5.ForLoop();
+            Section5.GradingAverageTool();
 
             // Helper functions to smooth development experience
             if (Debugger.IsAttached)
