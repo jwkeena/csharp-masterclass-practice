@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section6.InstantiateMultipleInstancesOfBasicClass();
+            Section6.UseParameterizedConstructor();
 
 
             // Helper functions to smooth development experience
