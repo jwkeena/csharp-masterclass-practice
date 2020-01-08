@@ -83,27 +83,35 @@ namespace CSharpPractice
             {
                 sum += firstInputAsInteger;
                 numOfStudents++;
-                Console.WriteLine("Grades for " + numOfStudents + " entered.");
+                Console.WriteLine("Grades for " + numOfStudents + " student entered.");
 
                 // Begin loop, since we know we have an integer 0-100 now
+                int counter = 0;
                 string input = Console.ReadLine();
-                bool inputIsInteger = int.TryParse(input, out int inputAsInteger);
                 while (input != "a")
                 {
+                    bool inputIsInteger = int.TryParse(input, out int inputAsInteger);
+                    counter++; // Increment counter right away
                     if (inputIsInteger) // Check if input is a whole number
                     {
                         if (inputAsInteger > -1 & inputAsInteger < 101)
                         {
                             sum += inputAsInteger;
                             numOfStudents++;
+                            Console.WriteLine("Grades for " + numOfStudents + " students entered.");
                         }
                         else
                         {
                             Console.WriteLine("Grades must range from 0-100. " +
-                                "\nEnter another grade or 'a' to average now.");
+                                "\n Enter another grade or 'a' to average now.");
                         }
                     }
-
+                    else
+                    {
+                        Console.WriteLine("Grades must be integers." +
+                            "\n Enter another grade or 'a' to averge now.");
+                    }
+                    input = Console.ReadLine();
                 }
 
                 // Tally average after loop breaks
