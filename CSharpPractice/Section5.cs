@@ -90,7 +90,7 @@ namespace CSharpPractice
                 string input = Console.ReadLine();
                 while (input != "a")
                 {
-                    bool inputIsInteger = int.TryParse(input, out int inputAsInteger);
+                    bool inputIsInteger = int.TryParse(input, out int inputAsInteger); // This must be inside the loop so its value can be updated each iteration
                     counter++; // Increment counter right away
                     if (inputIsInteger) // Check if input is a whole number
                     {
@@ -111,15 +111,16 @@ namespace CSharpPractice
                         Console.WriteLine("Grades must be integers." +
                             "\n Enter another grade or 'a' to averge now.");
                     }
-                    input = Console.ReadLine();
+                    input = Console.ReadLine(); // Reset the input so that it can exit the loop if 'a' is entered
                 }
 
                 // Tally average after loop breaks
                 if (numOfStudents > 0)
                 {
-                    Console.WriteLine("The average grade for all " + numOfStudents + " student(s) is " + sum / numOfStudents);
+                    double average = (double)sum / (double)numOfStudents;
+                    Console.WriteLine("----------------------------------------------------------");
+                    Console.WriteLine("The average grade for all " + numOfStudents + " student(s) is " + Math.Round(average, 2));
                 }
-
             }
             else
             {

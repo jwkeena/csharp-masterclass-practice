@@ -49,6 +49,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Section6.cs" />
+    <Compile Include="Section6Classes\Human.cs" />
+    <Compile Include="Section6Classes\User.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Section2.cs" />
     <Compile Include="Section1.cs" />

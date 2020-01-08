@@ -8,10 +8,11 @@ namespace CSharpPractice
         static void Main(string[] args)
         {
             // Shortcut for Console.WriteLine();
-            Action<object> see = Console.WriteLine; 
+            Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section5.GradingAverageTool();
+            Section6.InstantiateMultipleInstancesOfBasicClass();
+
 
             // Helper functions to smooth development experience
             if (Debugger.IsAttached)
