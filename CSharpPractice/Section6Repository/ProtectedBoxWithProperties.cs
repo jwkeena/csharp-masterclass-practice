@@ -62,6 +62,7 @@ namespace CSharpPractice.Section6Repository
         // but not this:
         // public int Qwerty { set; }
         // It also seems like you can't do auto-generated get, and then a custom set.
+        // You can make properties private, and stack overflow says you can use it to do lazy loading
 
         public int GetVolume()
         {
@@ -73,7 +74,7 @@ namespace CSharpPractice.Section6Repository
             Console.WriteLine("Length is {0}, height is {1}, and width is {2}, so the volume is {3}", length, height, Width, volume = length * height * Width);
         }
 
-        // Properties challenge
+        // Properties challenge: a read-only property (only set accessor)
         public int FrontSurface
         {
             get

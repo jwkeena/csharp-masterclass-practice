@@ -79,7 +79,13 @@ namespace CSharpPractice
             box.DisplayInfo();
 
             Console.WriteLine(box.FrontSurface);
+        }
 
+        public static void InstantiateMembers()
+        {
+            Members me = new Members();
+            bool isFriend = true;
+            me.WhatIsYourSalary(isFriend);
         }
     }
 }

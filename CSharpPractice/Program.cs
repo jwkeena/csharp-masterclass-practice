@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section6.InstantiateProtectedBoxWithProperties();
+            Section6.InstantiateMembers();
 
 
             // Helper functions to smooth development experience

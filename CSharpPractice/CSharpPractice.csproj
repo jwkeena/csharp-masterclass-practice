@@ -62,6 +62,7 @@
     <Compile Include="Section3.cs" />
     <Compile Include="Section4.cs" />
     <Compile Include="Section5.cs" />
+    <Compile Include="Section6Repository\Members.cs" />
     <Compile Include="Section6Repository\ProtectedBox.cs" />
     <Compile Include="Section6Repository\ProtectedBoxWithProperties.cs" />
   </ItemGroup>
