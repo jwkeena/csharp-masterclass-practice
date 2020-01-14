@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Section6.cs" />
     <Compile Include="Section6Repository\Anthropos.cs" />
+    <Compile Include="Section6Repository\Box.cs" />
     <Compile Include="Section6Repository\HomoSapiens.cs" />
     <Compile Include="Section6Repository\Human.cs" />
     <Compile Include="Helpers.cs" />
@@ -61,10 +62,15 @@
     <Compile Include="Section3.cs" />
     <Compile Include="Section4.cs" />
     <Compile Include="Section5.cs" />
+    <Compile Include="Section6Repository\ProtectedBox.cs" />
+    <Compile Include="Section6Repository\ProtectedBoxWithProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Section7Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ using CSharpPractice.Section6Repository;
 
 namespace CSharpPractice
 {
-    // Object Oriented Programming
+    // Object Oriented Programming: classes, objects, constructors, and properties
     class Section6
     {
         public static void InstantiateBasicClass()
@@ -50,6 +50,36 @@ namespace CSharpPractice
             // Note that not all parameters need to be entered, as long as there is an overload for it
             HomoSapiens jason = new HomoSapiens("Jason");
             jason.IntroduceMyself();
+        }
+
+        public static void InstantiateBox()
+        {
+            Box box = new Box();
+            box.length = 3; // assigning member variables, because they are public
+            box.height = 4;
+            box.width = 5;
+            box.DisplayInfo();
+        }
+
+        public static void InstantiateProtectedBox()
+        {
+            ProtectedBox box = new ProtectedBox();
+            box.SetLength(-3);
+            Console.WriteLine(box.GetVolume());
+            box.DisplayInfo();
+        }
+
+        public static void InstantiateProtectedBoxWithProperties()
+        {
+            ProtectedBoxWithProperties box = new ProtectedBoxWithProperties();
+            box.Height = 18; // using the set method of the Height property
+            box.Length = 10;
+            box.Width = 3;
+            Console.WriteLine(box.GetVolume());
+            box.DisplayInfo();
+
+            Console.WriteLine(box.FrontSurface);
+
         }
     }
 }

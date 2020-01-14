@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section6.UseParameterizedConstructor();
+            Section6.InstantiateProtectedBoxWithProperties();
 
 
             // Helper functions to smooth development experience

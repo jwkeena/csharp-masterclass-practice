@@ -8,7 +8,9 @@ namespace CSharpPractice.Section6Repository
 {
     class HomoSapiens
     {
-        // Member variables can be privatized now since they're being passed in to the constructor externally
+        // Member variables can be privatized now since they're being passed in to the constructor externally.
+        // These should still be initialized so that they can be used by member methods.
+        // For instance, if someone creates a HomoSapiens instance without a coolnessFactor, we need it to be initialized to 0.
         private string firstName;
         private int coolnessLevel;
 
