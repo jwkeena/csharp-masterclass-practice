@@ -166,7 +166,6 @@ namespace CSharpPractice
                     winner = gameBoard[0, i];
                     return gameOver = true;
                 }
-
             }
 
             // Check crosses for a win
@@ -182,7 +181,8 @@ namespace CSharpPractice
                 return gameOver = true;
             }
             
-            return false;
+            return gameOver = false;
+
         }
     }
 }
