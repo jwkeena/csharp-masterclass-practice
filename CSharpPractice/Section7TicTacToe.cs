@@ -144,14 +144,8 @@ namespace CSharpPractice
 
         public static bool CheckIfGameOver()
         {
-            // Check for stalemate
-            if (movesLeft == 0)
-            {
-                return gameOver = true;
-            }
-
-            // Then check for winner
-            for (int i = 0; i < 3 ; i++)
+            // Check for winner
+            for (int i = 0; i < 3; i++)
             {
                 // Check all rows for a win
                 if (gameBoard[i, 0] == gameBoard[i, 1] && gameBoard[i, 1] == gameBoard[i, 2])
@@ -168,8 +162,8 @@ namespace CSharpPractice
                 }
             }
 
-            // Check crosses for a win
-            if (gameBoard[0,0] == gameBoard[1,1] && gameBoard[1,1] == gameBoard[2, 2])
+            // Then check crosses for a win
+            if (gameBoard[0, 0] == gameBoard[1, 1] && gameBoard[1, 1] == gameBoard[2, 2])
             {
                 winner = gameBoard[0, 0];
                 return gameOver = true;
@@ -180,9 +174,14 @@ namespace CSharpPractice
                 winner = gameBoard[0, 2];
                 return gameOver = true;
             }
-            
-            return gameOver = false;
 
+            // Finally, check for stalemate (so a player can win on the last move)
+            if (movesLeft == 0)
+            {
+                return gameOver = true;
+            }
+
+            return gameOver = false;
         }
     }
 }

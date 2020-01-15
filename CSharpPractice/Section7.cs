@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// using CSharpPractice.Section7Repository;
+using System.Collections;
 
 namespace CSharpPractice
 {
@@ -99,6 +99,108 @@ namespace CSharpPractice
 
             // Get info in 3D array
             Console.WriteLine(array3D[1, 0, 1]);
+
+        }
+
+        public static void CreateJaggedArray()
+        {
+            // A jagged array is an array of arrays such that member arrays can be of different sizes
+            // Notice that a 2D array MUST have equal columns and rows.
+            // There are differences between jagged arrays and 2D arrays: https://stackoverflow.com/questions/597720/what-are-the-differences-between-a-multidimensional-array-and-an-array-of-arrays
+
+            // Declaring a jaggedArray with 3 inner arrays
+            int[][] jaggedArray = new int[3][];
+
+            // Within the overarching array, we declare arrays of different sizes and initialize them later
+            jaggedArray[0] = new int[5];
+            jaggedArray[1] = new int[7];
+            jaggedArray[2] = new int[3];
+
+            jaggedArray[0][0] = 56; // and so on.
+
+            // Or we can can declare and initialize the arrays simultaneously
+            jaggedArray[0] = new int[]{ 3, 4, 6, 7, 8 };
+            jaggedArray[1] = new int[]{ 45, 67, 54, 87, 88, 99, 7};
+            jaggedArray[2] = new int[]{ 234, 433, 654};
+
+            // Or we can declare and initialize the outer and inner arrays simultaneously
+            int[][] jaggedArray2 = new int[][]
+            {
+                new int[] {3, 5, 76, 4, 542},
+                new int[] {1, 2, 3}
+            };
+
+            PrintContentsOfJaggedArray(jaggedArray2);
+        }
+
+        public static void PrintContentsOfJaggedArray(int[][] jaggedArray)
+        {
+            for (int i = 0; i <jaggedArray.Length; i++ )
+            {
+                Console.WriteLine("Nested array at index" + i);
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.WriteLine(jaggedArray[i][j]);
+                }
+            }
+        }
+
+        public static void PassArrayAsParameter()
+        {
+            int[] grades = { 43, 64, 76, 86, 99, 100, 77, 86 };
+
+            foreach (int grade in grades)
+            {
+                Console.WriteLine(grade);
+            }
+
+            Console.WriteLine("The average is " + Average(grades));
+        }
+
+        public static double Average(int[] array)
+        {
+            int sum = 0;
+            double average;
+
+            for (int i=0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+
+            average = (double)sum/array.Length;
+            return average;
+
+        }
+
+        public static void CreateArrayList()
+        {
+            // Declaring an ArrayList with undefined amount of objects
+            ArrayList myArrayList = new ArrayList();
+
+            // Declaring an ArrayList with a defined amount of objects
+            ArrayList myArrayList2 = new ArrayList();
+
+            // ArrayLists are like arrays in javascript (you can add any kind of data to it)
+            // .Add is like .push in javascript
+            myArrayList2.Add("test");
+            myArrayList.Add(24);
+            myArrayList.Add(53.55);
+            myArrayList.Add(2343.55);
+            myArrayList.Add(true);
+            myArrayList.Add("You can add any data type");
+            myArrayList.Add(myArrayList2);
+
+            // Deletes first matching element
+            myArrayList.Remove(24);
+
+            // Delete element at specific position
+            myArrayList.RemoveAt(0);
+
+            foreach(object obj in myArrayList)
+            {
+                Console.WriteLine(obj);
+            }
+
 
         }
     }
