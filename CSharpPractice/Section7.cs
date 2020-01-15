@@ -169,7 +169,6 @@ namespace CSharpPractice
 
             average = (double)sum/array.Length;
             return average;
-
         }
 
         public static void CreateArrayList()
@@ -182,7 +181,6 @@ namespace CSharpPractice
 
             // ArrayLists are like arrays in javascript (you can add any kind of data to it)
             // .Add is like .push in javascript
-            myArrayList2.Add("test");
             myArrayList.Add(24);
             myArrayList.Add(53.55);
             myArrayList.Add(2343.55);
@@ -200,7 +198,68 @@ namespace CSharpPractice
             {
                 Console.WriteLine(obj);
             }
+        }
 
+        public static void CreateList()
+        {
+            // Declaring list of type int without values
+            var numbers = new List<int>();
+
+            // Declaring list of type int with values
+            var numbers2 = new List<int> { 1, 2, 3, 4 };
+
+            // Adding and removing items works the same as with ArrayLists
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
+            numbers.Add(4);
+            numbers.Add(5);
+            numbers.Add(6);
+            numbers.Add(7);
+            numbers.Remove(5);
+            numbers.RemoveAt(0);
+            numbers.Clear(); // Removes all items
+
+            // Looping: you can use a foreach loop
+            foreach(int element in numbers2)
+                Console.WriteLine(element);
+
+            // Or you can use a for loop. Notice the .Count instead of .Length
+            for (int i = 0; i < numbers2.Count; i++)
+                Console.WriteLine(numbers2[i]);
+        }
+
+        public static void ArraysVsArrayListsVsLists()
+        {
+            // Arrays.
+            // Limited to a single data type
+            // Immutable: i.e., you cannot change amount of elements (though you can change individual values). So, arrays do not have .Add, .Remove, .RemoveAt, .Clear capability
+            // Immutable: cannot be sorted
+            // Foreach loops work
+            // .Contains method works
+            // No .FindIndex method
+            int[] numbersArray = new int[] { 1, 2, 3, 4 };
+
+            // Lists.
+            // Limited to a single data type UNLESS you make a List of objects.
+            // Mutable: you can change amount and value of elements using special methods
+            // Mutable: Can be sorted
+            // Foreach loops work
+            // .Contains method works
+            // .FindIndex method works
+            List<int> numbersList = new List<int> { 1, 2, 3, 4 };
+            List<object> myList = new List<object> { 1, true, "string", 4.5};
+
+            // ArrayLists.
+            // Not limited to a single data type
+            // Mutable: you can change amount and value of elements using special methods
+            ArrayList numbersArrayList = new ArrayList() { 1, 2, 3, 4 };
+            ArrayList myArrayList = new ArrayList();
+
+            foreach(object x in numbersArrayList)
+                Console.WriteLine(x);
+
+            
 
         }
     }
