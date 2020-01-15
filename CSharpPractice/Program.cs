@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section7.Create2DArray();
+            Section7TicTacToe.PlayTicTacToe();
 
 
             // Helper functions to smooth development experience

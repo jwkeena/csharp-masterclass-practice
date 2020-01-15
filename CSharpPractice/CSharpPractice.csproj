@@ -66,6 +66,7 @@
     <Compile Include="Section6Repository\ProtectedBox.cs" />
     <Compile Include="Section6Repository\ProtectedBoxWithProperties.cs" />
     <Compile Include="Section7.cs" />
+    <Compile Include="Section7TicTacToe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
