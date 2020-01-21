@@ -253,14 +253,12 @@ namespace CSharpPractice
             // ArrayLists.
             // Not limited to a single data type
             // Mutable: you can change amount and value of elements using special methods
+            // Mutable: can be sorted
+            // Foreach loops work
+            // .Contains method works
+            // No .FindIndex method
             ArrayList numbersArrayList = new ArrayList() { 1, 2, 3, 4 };
             ArrayList myArrayList = new ArrayList();
-
-            foreach(object x in numbersArrayList)
-                Console.WriteLine(x);
-
-            
-
         }
     }
 }

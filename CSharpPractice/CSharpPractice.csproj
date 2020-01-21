@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Section9.cs" />
     <Compile Include="Section6.cs" />
     <Compile Include="Section6Repository\Anthropos.cs" />
     <Compile Include="Section6Repository\Box.cs" />
@@ -67,13 +68,14 @@
     <Compile Include="Section6Repository\ProtectedBoxWithProperties.cs" />
     <Compile Include="Section7.cs" />
     <Compile Include="Section7TicTacToe.cs" />
+    <Compile Include="Section9Repository\ImagePost.cs" />
+    <Compile Include="Section9Repository\Post.cs" />
+    <Compile Include="Section9Repository\VideoPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Section7Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
