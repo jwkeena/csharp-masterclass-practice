@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section9.CreatePosts();
+            Section9.PlayVideoPost();
 
             // Helper functions to smooth development experience
             if (Debugger.IsAttached)

@@ -17,8 +17,20 @@ namespace CSharpPractice
             Section9Repository.ImagePost imagePost1 = new Section9Repository.ImagePost("This is an image post", true, "InstagramHusband", "www.theinternet.com/image.jpg");
             Console.WriteLine(imagePost1.ToString());
 
-            Section9Repository.VideoPost videoPost1 = new Section9Repository.VideoPost("This is a video post", true, "RIP-Vine", "www.theinternet.com/video.mpeg");
+            Section9Repository.ImagePost imagePost2 = new Section9Repository.ImagePost();
+            Console.WriteLine(imagePost2.ToString());
+
+            Section9Repository.VideoPost videoPost1 = new Section9Repository.VideoPost("This is a video post", true, "RIP-Vine", "www.theinternet.com/video.mpeg", 100);
             Console.WriteLine(videoPost1.ToString());
+        }
+
+        public static void PlayVideoPost()
+        {
+            Section9Repository.VideoPost videoPost1 = new Section9Repository.VideoPost("This is a video post", true, "RIP-Vine", "www.theinternet.com/video.mpeg", 100);
+            videoPost1.Play();
+            Console.WriteLine("Press any key to stop video");
+            Console.ReadKey();
+            videoPost1.Stop();
         }
 
     }

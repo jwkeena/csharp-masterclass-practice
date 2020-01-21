@@ -12,8 +12,12 @@ namespace CSharpPractice.Section9Repository
         public string ImageURL { get; set; }
 
         // This empty constructor seems useless. The program works without it, and the instructor's explanation of it isn't clear
+        // So here's my explanation. 
+        // The reason it's here is if you created a new ImagePost with no parameters, since this empty constructor would invoke the base class constructor.
+        // Without an empty constructor in a derived class, the derived class won't invoke the base class constructor if it's called with no parameters.
 
-
+        public ImagePost() { }
+        
         public ImagePost(string title, bool isPublic, string sendByUsername, string imageURL)
         {
             // The following properties and the GetNextID method are inherited from Post.

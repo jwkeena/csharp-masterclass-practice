@@ -16,6 +16,7 @@ namespace CSharpPractice
         // Alt method https://stackoverflow.com/questions/21221218/c-sharp-timer-to-close-console-window-after-x-seconds
         public static void CloseWindowEventually()
         {
+            Console.WriteLine("-----------------------------------------------");
             Timer closeWindowTimer = new Timer(); // Create a timer from the System.Timers assembly reference
             closeWindowTimer.Elapsed += new ElapsedEventHandler(CloseConsoleWindow); // Hook up the elapsed event for the timer
             closeWindowTimer.Interval = 7000; // Set timer for interval in milliseconds
