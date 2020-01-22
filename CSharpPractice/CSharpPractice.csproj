@@ -68,8 +68,13 @@
     <Compile Include="Section6Repository\ProtectedBoxWithProperties.cs" />
     <Compile Include="Section7.cs" />
     <Compile Include="Section7TicTacToe.cs" />
+    <Compile Include="Section9Repository\Boss.cs" />
+    <Compile Include="Section9Repository\Employee.cs" />
     <Compile Include="Section9Repository\ImagePost.cs" />
+    <Compile Include="Section9Repository\Notification.cs" />
+    <Compile Include="Section9Repository\NotificationInterface.cs" />
     <Compile Include="Section9Repository\Post.cs" />
+    <Compile Include="Section9Repository\Trainee.cs" />
     <Compile Include="Section9Repository\VideoPost.cs" />
   </ItemGroup>
   <ItemGroup>

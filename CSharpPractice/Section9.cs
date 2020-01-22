@@ -24,6 +24,7 @@ namespace CSharpPractice
             Console.WriteLine(videoPost1.ToString());
         }
 
+        // Inheritance challenge 1
         public static void PlayVideoPost()
         {
             Section9Repository.VideoPost videoPost1 = new Section9Repository.VideoPost("This is a video post", true, "RIP-Vine", "www.theinternet.com/video.mpeg", 100);
@@ -31,6 +32,26 @@ namespace CSharpPractice
             Console.WriteLine("Press any key to stop video");
             Console.ReadKey();
             videoPost1.Stop();
+        }
+
+        public static void InheritanceChallenge2()
+        {
+            Section9Repository.Employee janitor = new Section9Repository.Employee("Janitor", "Mario", 40000);
+            janitor.Work();
+
+            Section9Repository.Boss ceo = new Section9Repository.Boss("CEO", "Fischer", 100000, "Lexus");
+            ceo.Work();
+            ceo.Lead();
+
+            Section9Repository.Trainee intern = new Section9Repository.Trainee("intern", "Sona", 5000, "10am-2pm", "5pm-8pm");
+            intern.Work();
+        }
+
+        public static void InterfaceExample()
+        {
+            Section9Repository.Notification note1 = new Section9Repository.Notification("justin", "hello world", DateTime.Now.ToString());
+            note1.showNotification();
+            note1.getDate();
         }
 
     }

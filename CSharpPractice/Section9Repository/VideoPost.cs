@@ -20,6 +20,7 @@ namespace CSharpPractice.Section9Repository
         protected int LengthCountdown { get; set; }
 
         // I'm not creating an empty constructor because I'm not going to instantiate this class without all the parameters 
+        // So only the following parameterized constructor is necessary.
         public VideoPost(string title, bool isPublic, string sendByUsername, string videoURL, int length)
         {
             this.ID = GetNextID();
