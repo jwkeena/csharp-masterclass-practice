@@ -6,25 +6,29 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice.Section9Repository
 {
-    class Notification : NotificationInterface
+    // Notice that the class inherits from the interface.
+    // The interface ensures that certain methods, properties, indexers, and events are defined in the class
+    // The interface could also exist in the same file, but that's not standard practice.
+    // One class can inherit from multiple interfaces.
+    class Notification : INotification
     {
-        private string sender;
+        public string Sender { get; set; }
+        public string Date { get; set; }
         private string message;
-        private string date;
 
         // Default constructor
         public Notification()
         {
-            this.sender = null;
+            this.Sender = null;
             this.message = null;
-            this.date = DateTime.Now.ToString();
+            this.Date = DateTime.Now.ToString();
         }
 
         public Notification(string sender, string message, string date)
         {
-            this.sender = sender;
+            this.Sender = sender;
             this.message = message;
-            this.date = date;
+            this.Date = date;
         }
 
         public void showNotification()
@@ -34,8 +38,8 @@ namespace CSharpPractice.Section9Repository
 
         public string getDate()
         {
-            Console.WriteLine(this.date);
-            return this.date;
+            Console.WriteLine(this.Date);
+            return this.Date;
         }
     }
 }
