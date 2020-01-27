@@ -12,6 +12,7 @@ namespace CSharpPractice.Section9Repository
     // By default all members are public
     // You also cannot implement members in the interface (i.e., define how the methods work in the method body)
     // Interfaces are handy for forcing a certain class structure.
+    // You can also make an interface inside another class, but it's more typical to give it its own file.
     interface INotification
     {
         // Member properties that must be defined in inheriting classes

@@ -49,6 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Section10.cs" />
+    <Compile Include="Section10Repository\Audi.cs" />
+    <Compile Include="Section10Repository\BMW.cs" />
+    <Compile Include="Section10Repository\Car.cs" />
+    <Compile Include="Section10Repository\M3.cs" />
     <Compile Include="Section9.cs" />
     <Compile Include="Section6.cs" />
     <Compile Include="Section6Repository\Anthropos.cs" />
@@ -71,8 +76,8 @@
     <Compile Include="Section9Repository\Boss.cs" />
     <Compile Include="Section9Repository\Employee.cs" />
     <Compile Include="Section9Repository\ImagePost.cs" />
+    <Compile Include="Section9Repository\INotification.cs" />
     <Compile Include="Section9Repository\Notification.cs" />
-    <Compile Include="Section9Repository\NotificationInterface.cs" />
     <Compile Include="Section9Repository\Post.cs" />
     <Compile Include="Section9Repository\Trainee.cs" />
     <Compile Include="Section9Repository\VideoPost.cs" />
