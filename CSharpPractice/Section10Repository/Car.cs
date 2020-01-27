@@ -44,7 +44,10 @@ namespace CSharpPractice.Section10Repository
             Console.WriteLine("This method on Car class will be changed in the BMW and Audi subclasses, but then locked from being overridden anymore.");
         }
 
-        // 'Has a' relationship
+        // 'Has a' relationship, loosely coupled.
+        // If we wanted to make a tightly coupled 'has a' relationship, we could instantiate the class inside the constructor instead.\
+        // Then you couldn't create a car without instantiating CarIDInfo. See https://www.c-sharpcorner.com/blogs/isa-versus-hasa1
+        // Note the protected keyword. This is so that each inheriting class can access the id info
         protected CarIDInfo carIdInfo = new CarIDInfo();
 
         // Methods to modify and display the 'has a' relationship

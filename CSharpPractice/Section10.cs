@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using CSharpPractice.Section10Repository;
 
 namespace CSharpPractice
@@ -10,7 +11,6 @@ namespace CSharpPractice
     // Polymorphism, More on OOP, and Text Files
     class Section10
     {
-        
         public static void Polymorphism()
         {
             var cars = new List<Car>
@@ -70,16 +70,70 @@ namespace CSharpPractice
         public static void HasARelationshipExample()
         {
             // The inheritance examples we've seen so far are all 'is a' relationships. An M3 is a BMW. A BWM is a Car, etc.
+            // In fact, all inheritance sets up 'is a' relationships. 
             // But suppose we want to give more attributes to the base class car, such that all instances of cars (BMWs, Audis, and specific models of those) 'have a' property like a VIN?
+            // This approach, the alternative to inheritance, is called 'composition.'
             // Then we can create a class like 'CarIDInfo' and establish a 'has a' relationship in the Car class.
-            // Go to the Car class and see how the protected keyword has been used to say that Cars 'have a' carIdInfo.
+            // Go to the Car class and see how the CarIdInfo class has been instantiated to say that Cars 'have a' carIdInfo.
             // We are basically instantiating the CarIDInfo class within each Car instantiation. This way, an object HAS another object, instead of BEING an instance of another class.
             // And given the methods defined in the Car class, we can get and set the car id info here.
             M3 myM3 = new M3(260, "red", "M3 Super Turbo");
             myM3.SetCarIdInfo(11768, "Mario Andretti");
             myM3.GetCarIdInfo();
-
         }
 
+        public static void ReadFromTextFile()
+        {
+            // First create a string into which the text from the text file can be saved.
+            // To do that, we'll need to have a location that the text file is stored.
+            // I'm creating a dynamic way to get the text file instead of hard-coding it. 
+            // I've set the TextFile.txt's Build Action property to copy to the output directory if it's newer.
+            // That way, when the exe file runs, it can find the text file relative to itself easily.
+            string assemblyLocation = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string fullPath = assemblyLocation + "/Assets/TextFile.txt";
+            string text = File.ReadAllText(fullPath);
+            Console.WriteLine("TextFile.txt contains the following text: \n" + text);
+
+            Console.WriteLine("-----------------------------");
+
+            // Alternate method of reading text
+            string[] lines = File.ReadAllLines(fullPath);
+            Console.WriteLine("TextFile.txt contains the following text:");
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+        public static void WriteToTextFile()
+        {
+            // Option 1
+            string[] lines = { "first line", "second line", "third line" };
+            string assemblyLocation = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string fullPath = assemblyLocation + "/Assets/ThisFileWasCreatedByTheApp.txt";
+            File.WriteAllLines(fullPath, lines);
+
+            // Option 2 - dynamically create .txt file
+            Console.WriteLine("Give the file a name.");
+            string fileName = Console.ReadLine();
+            Console.WriteLine("Enter some text content for the file.");
+            string input = Console.ReadLine();
+            File.WriteAllText(assemblyLocation + "/Assets/" + fileName + ".txt", input);
+
+            // Option 3
+            // Grab text from file in option 1 and put it in another file
+            using(StreamWriter file = new StreamWriter(assemblyLocation + "/Assets/WriteTextOption3.txt"))
+            {
+                foreach(string line in lines)
+                {
+                    if (line.Contains("third"))
+                    {
+                        file.WriteLine(line);
+                    }
+                }
+            }
+            
+        }
     }
 }
