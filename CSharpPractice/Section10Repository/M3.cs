@@ -16,5 +16,8 @@ namespace CSharpPractice.Section10Repository
             // Shortcut to invoke the method as defined in BMW
             base.BaseMethodWithOverride();
         }
+
+        // Uncomment the next line to see the error that results when trying to override a sealed method
+        // public override void BaseMethodWithOverrideThenSealed() { }
     }
 }

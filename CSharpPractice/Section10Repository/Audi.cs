@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice.Section10Repository
 {
-    class Audi : Car
+    sealed class Audi : Car
     {
         private string make = "Audi";
         public string Model { get; set; }
@@ -28,10 +28,17 @@ namespace CSharpPractice.Section10Repository
         {
             Console.WriteLine("This " + make + " " + Model + " has " + HorsePower + " horsepower and has a " + Color + " color.");
         }
+
         public new void BaseMethodWithNewKeyword()
         {
             Console.WriteLine("This is an entirely NEW method in the inheriting class. It is not overriding the base method but reprioritizing it." +
                 " To that extent, its name is misleading. It's not a base method but a new method only on this subclass, though it has the same name.");
+        }
+
+        // Sealed keyword must come before override keyword, because you can only seal override methods
+        public sealed override void BaseMethodWithOverrideThenSealed()
+        {
+            Console.WriteLine("This method has been overridden and locked from further changes by the sealed keyword.");
         }
 
     }

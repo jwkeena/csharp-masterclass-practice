@@ -34,5 +34,11 @@ namespace CSharpPractice.Section10Repository
             Console.WriteLine("This is an entirely NEW method in the inheriting class. It is not overriding the base method but reprioritizing it.");
         }
 
+        // Sealed keyword must come before override keyword, because you can only seal override methods
+        public sealed override void BaseMethodWithOverrideThenSealed()
+        {
+            Console.WriteLine("This method has been overridden and locked from further changes by the sealed keyword.");
+        }
+
     }
 }

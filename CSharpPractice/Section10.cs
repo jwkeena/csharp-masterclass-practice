@@ -56,8 +56,16 @@ namespace CSharpPractice
 
         public static void PreventPolymorphism()
         {
+            // First, I created a subclass of BMW.
+            // Then we instantiate the sub-sub class (Car --> BMW --> M3).
             M3 myM3 = new M3(260, "red", "M3 Super Turbo");
+
+            // Now look within the M3 class to see how the following method has been sealed at the BMW level.
+            // The polymorphic behavior has been prevented.
             myM3.BaseMethodWithOverride();
+
+            // You can also seal entire classes. Uncomment the following line to see the error it produces.
+
         }
 
     }

@@ -38,5 +38,10 @@ namespace CSharpPractice.Section10Repository
         {
             Console.WriteLine("This is a base Car class method. In inheriting classes, the new keyword has been applied.");
         }
+
+        public virtual void BaseMethodWithOverrideThenSealed()
+        {
+            Console.WriteLine("This method on Car class will be changed in the BMW and Audi subclasses, but then locked from being overridden anymore.");
+        }
     }
 }
