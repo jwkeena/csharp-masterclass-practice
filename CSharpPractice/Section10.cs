@@ -64,7 +64,20 @@ namespace CSharpPractice
             // The polymorphic behavior has been prevented.
             myM3.BaseMethodWithOverride();
 
-            // You can also seal entire classes. Uncomment the following line to see the error it produces.
+            // You can also seal entire classes. Check out Audi and TT classes to see the idea in action.
+        }
+
+        public static void HasARelationshipExample()
+        {
+            // The inheritance examples we've seen so far are all 'is a' relationships. An M3 is a BMW. A BWM is a Car, etc.
+            // But suppose we want to give more attributes to the base class car, such that all instances of cars (BMWs, Audis, and specific models of those) 'have a' property like a VIN?
+            // Then we can create a class like 'CarIDInfo' and establish a 'has a' relationship in the Car class.
+            // Go to the Car class and see how the protected keyword has been used to say that Cars 'have a' carIdInfo.
+            // We are basically instantiating the CarIDInfo class within each Car instantiation. This way, an object HAS another object, instead of BEING an instance of another class.
+            // And given the methods defined in the Car class, we can get and set the car id info here.
+            M3 myM3 = new M3(260, "red", "M3 Super Turbo");
+            myM3.SetCarIdInfo(11768, "Mario Andretti");
+            myM3.GetCarIdInfo();
 
         }
 

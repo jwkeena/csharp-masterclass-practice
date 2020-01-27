@@ -10,7 +10,7 @@ namespace CSharpPractice.Section10Repository
     {
         public int HorsePower { get; set; }
         public string Color { get; set; }
-
+        
         // Default constructor
         public Car() { }
 
@@ -42,6 +42,21 @@ namespace CSharpPractice.Section10Repository
         public virtual void BaseMethodWithOverrideThenSealed()
         {
             Console.WriteLine("This method on Car class will be changed in the BMW and Audi subclasses, but then locked from being overridden anymore.");
+        }
+
+        // 'Has a' relationship
+        protected CarIDInfo carIdInfo = new CarIDInfo();
+
+        // Methods to modify and display the 'has a' relationship
+        public void SetCarIdInfo(int idNum, string owner)
+        {
+            carIdInfo.IDNum = idNum;
+            carIdInfo.Owner = owner;
+        }
+
+        public void GetCarIdInfo()
+        {
+            Console.WriteLine($"The car has the ID of {carIdInfo.IDNum} and is owned by {carIdInfo.Owner}");
         }
     }
 }
