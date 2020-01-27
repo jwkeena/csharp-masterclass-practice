@@ -11,7 +11,7 @@ namespace CSharpPractice
             Action<object> see = Console.WriteLine;
 
             // Test section methods here
-            Section10.WriteToTextFile();
+            Section11.Structs();
 
             // Helper functions to smooth development experience
             if (Debugger.IsAttached)

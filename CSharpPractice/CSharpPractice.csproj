@@ -56,6 +56,7 @@
     <Compile Include="Section10Repository\CarIDInfo.cs" />
     <Compile Include="Section10Repository\M3.cs" />
     <Compile Include="Section10Repository\TT.cs" />
+    <Compile Include="Section11.cs" />
     <Compile Include="Section9.cs" />
     <Compile Include="Section6.cs" />
     <Compile Include="Section6Repository\Anthropos.cs" />
@@ -92,6 +93,9 @@
     <Content Include="Assets\TextFile.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Section11Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
