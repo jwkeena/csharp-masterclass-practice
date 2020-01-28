@@ -13,6 +13,48 @@ namespace CSharpPractice
     {
         public static void Polymorphism()
         {
+            /*
+             * First, what is polymorphism? The instructor doesn't explain the theory here.
+                    Polymorphism is Greek for "many forms."
+                    Note, first of all, that this term does not refer to having many instances (or forms) of one class. That's just object instantiation.
+                    Note, second of all, that this term does not refer to having many derived classes (or forms) of one base class. That's just inheritance.
+
+                    What then, does the term mean positively?
+                    Despite the "poly" in its name, there are, strangely, only 2 basic forms of polymorphism in C#.
+                    And even more strangely, as I understand these terms, they are opposites. 
+                    In other words, the two kinds of polymorphism are really 2 distinct things, not subsumable under a single common essense. They deserve their own names.
+
+                    Nevertheless, they do have some traits in common, namely:
+                        i. They both establish a relationship of sameness (but not identity) between many things and one other thing.
+                        ii. They both require inheritance to be possible.
+
+             * What are the 2 types of polymorphism?
+                    The basic idea is that in OOP, **when inheritance occurs**, it becomes possible to do these two things:
+                        (1) treat many things of different, but related kinds as if they were the same kind, or 
+                        (2) the same word in different, but related contexts as if it meant different things.
+                    We can see that the relationship is reversed from (1) to (2):
+                        (1) many (kinds) --> one (kind)
+                        (2) one (name) --> many (meanings)
+                    Where --> means 'treated as if'.
+                    The fact that we are not dealing with inverted relationships, and different understood content, is why I think these types of polymorphism should have different names.
+
+            * Let me explain the two basic types with more specificity.
+
+                 There can be (1) many objects that are treated as if they were instances of the same class (when they are in fact instances of different, albeit related classes).
+                 This is achieved **implicitly** by the compiler. It implicitly converts derived classes to its base class; no cast is required.
+                 From the ms docs: At run time, objects of a derived class may be treated as objects of a base class in places such as method parameters and collections or arrays. When this occurs, the object's declared type is no longer identical to its run-time type.
+
+                 There can be (2) many method implementations that have the same name and signature (when they are in fact non-identical methods in different classes).
+                 This is achieved **explicitly** by the programmer when using 'virtual' and 'override' keywords in method definitions in the base and inheriting classes.
+                 Properties can also be overridden, which likewise requires using 'virtual' and 'override' keywords.
+
+                 There can be (2) many method definitions or declarations that have the same name in the same class, as long as they have different signatures (number of parameters + parameter types).
+                 This is achieved **explicitly** by the programmer by defining each method 'overload', as it's called.
+
+            * There is more to be said about dynamic or run time polymorphism vs. static or compile time polymorphism, but I don't find that stuff helpful.
+            * There is also operator overloading, but I'll leave that aside.
+            */
+
             var cars = new List<Car>
             {
                 new Audi(200, "blue", "A4"),
@@ -133,7 +175,6 @@ namespace CSharpPractice
                     }
                 }
             }
-            
         }
     }
 }
