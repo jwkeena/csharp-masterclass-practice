@@ -242,6 +242,40 @@ namespace CSharpPractice
 
             Sphere sphere1 = new Sphere(7);
             sphere1.GetInfo();
+
+            // Or make an array of shapes
+            Shape[] shapes = { new Sphere(5), new Cube(3), new Sphere(6), new Cube(8) };
+            foreach (Shape shape in shapes)
+            {
+                shape.GetInfo();
+            }
+
+        }
+
+        public static void AsAndIsKeywords()
+        {
+            Shape[] shapes = { new Sphere(5), new Cube(3), new Sphere(6), new Cube(8) };
+            foreach (Shape shape in shapes)
+            {
+                // as keyword example
+                Cube cubeCopy = shape as Cube;
+                if (cubeCopy == null)
+                {
+                    Console.WriteLine("This shape is not a cube.");
+                }
+
+                // is keyword example
+                if (cubeCopy is Cube)
+                {
+                    Console.WriteLine("This shape is a cube.");
+                }
+            }
+
+            // We can also instantiate an object as a certain type
+            object cube1 = new Cube(7);
+            // And then create a copy of it by casting it into a cube
+            Cube cube2 = (Cube)cube1;
+            Console.WriteLine($"{cube2.Name} has a volume of {cube2.Volume()}");
         }
     }
 }
