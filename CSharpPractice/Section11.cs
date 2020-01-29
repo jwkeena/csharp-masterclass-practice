@@ -252,23 +252,32 @@ namespace CSharpPractice
 
         }
 
-        public static void AsAndIsKeywords()
+        public static void AsAndIsOperators()
         {
             Shape[] shapes = { new Sphere(5), new Cube(3), new Sphere(6), new Cube(8) };
             foreach (Shape shape in shapes)
             {
-                // as keyword example
+                // as operator example
+                // 'as' operator performs a conversion between comaptible reference or nullable types
                 Cube cubeCopy = shape as Cube;
                 if (cubeCopy == null)
                 {
                     Console.WriteLine("This shape is not a cube.");
                 }
 
-                // is keyword example
+                // is operator example
+                // 'is' operator is used to check if the run-time type of an object is compatible with the given type
+                // 'is' is of type boolean
                 if (cubeCopy is Cube)
                 {
                     Console.WriteLine("This shape is a cube.");
                 }
+
+                // More from https://www.geeksforgeeks.org/is-vs-as-operator-keyword-in-c-sharp/
+                // The is operator is of boolean type whereas as operator is not of boolean type.
+                // The is operator returns true if the given object is of the same type whereas as operator returns the object when they are compatible with the given type.
+                // The is operator returns false if the given object is not of the same type whereas as operator return null if the conversion is not possible.
+                // The is operator is used for only reference, boxing, and unboxing conversions whereas as operator is used only for nullable, reference and boxing conversions
             }
 
             // We can also instantiate an object as a certain type
