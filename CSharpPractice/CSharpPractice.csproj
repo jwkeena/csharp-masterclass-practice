@@ -57,6 +57,9 @@
     <Compile Include="Section10Repository\M3.cs" />
     <Compile Include="Section10Repository\TT.cs" />
     <Compile Include="Section11.cs" />
+    <Compile Include="Section11Repository\Cube.cs" />
+    <Compile Include="Section11Repository\Shape.cs" />
+    <Compile Include="Section11Repository\Sphere.cs" />
     <Compile Include="Section9.cs" />
     <Compile Include="Section6.cs" />
     <Compile Include="Section6Repository\Anthropos.cs" />
@@ -90,12 +93,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Sample.txt" />
+    <Content Include="Assets\RegExCheatSheet.txt" />
     <Content Include="Assets\TextFile.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Section11Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

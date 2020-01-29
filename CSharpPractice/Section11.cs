@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using CSharpPractice.Section11Repository;
 
 namespace CSharpPractice
 {
@@ -138,6 +140,108 @@ namespace CSharpPractice
                 roll = dice.Next(1, 7);
                 Console.WriteLine(roll);
             }
+        }
+
+        public static void RegExExamples()
+        {
+            Console.WriteLine("See comments for examples of RegEx formulas to use in Sample.txt.");
+            // Search for pattern 123-456-7890
+            // \d{3}-\d{3}-\d{4}
+
+            // Search for US phone number pattern with only - OR . OR # between number blocks
+            // \d{3}[.#-]\d{3}[.#-]\d{4}
+
+            // Challenge: search for website links
+            // (https|http)://(www.|).*\.*\b    <-- mine 
+            // https?://(www.)?(\w+)(\.\w+)     <-- instructor's
+
+            // Using C# Regex to find all numbers in a string
+            Regex regex = new Regex(@"\d");
+            string text = "Hi there, my favorite number is 7 and numbers that are terrible include, 1, 4, and 898987867.";
+
+            MatchCollection matchCollection = regex.Matches(text);
+            Console.WriteLine($"Matches found: {matchCollection.Count}. They are: ");
+            foreach (Match match in matchCollection) 
+            {
+                GroupCollection group = match.Groups;
+                Console.WriteLine($"{group[0].Value} found at {group[0].Index}");
+            }
+        }
+
+        public static void DateTimeExamples()
+        {
+            DateTime dateTime = new DateTime(2019, 7, 13);
+            Console.WriteLine(dateTime + " is an important day");
+
+            // Write today on screen
+            Console.WriteLine(DateTime.Today);
+            // Write current time on screen
+            Console.WriteLine(DateTime.Now);
+
+            // Is 3000 a leap year?
+            int days = DateTime.DaysInMonth(3000, 2);
+            Console.WriteLine("Days in Feb 3000: {0}", days);
+
+            // What time is it?
+            DateTime now = DateTime.Now;
+            Console.WriteLine($"It is {now.Hour} o'clock {now.Minute} minutes and {now.Second} seconds");
+
+            // Using a methods that return a DateTime
+            Console.WriteLine(GetTomorrow());
+            Console.WriteLine(GetFirstWeekdayOfYear(3000));
+
+            // How many days since x day?
+            Console.WriteLine("Write a date in this format: yyyy-mm-dd");
+            string input = Console.ReadLine();
+            if (DateTime.TryParse(input, out dateTime))
+            {
+                Console.WriteLine(dateTime);
+                TimeSpan daysPassed = now.Subtract(dateTime);
+                Console.WriteLine($"Days passed since {dateTime}: {daysPassed.Days}");
+            }
+            else
+                Console.WriteLine("Wrong input.");
+        }
+
+        static DateTime GetTomorrow()
+        {
+            return DateTime.Today.AddDays(1);
+        }
+
+        static DayOfWeek GetFirstWeekdayOfYear(int year)
+        {
+            return new DateTime(year, 1, 1).DayOfWeek;
+        }
+
+        public static void NullableExamples()
+        {
+            // These are equivalent. All you need to do is add the ? for the shortcut
+            Nullable<Int32> nullableIntA = null;
+            int? nullableIntB = null;
+
+            // Nothing is printed for the empty values, but there's no build error
+            double? num1 = new Double?();
+            double? num2 = 3.14157;
+            bool? boolval = new bool?();
+            Console.WriteLine($"Our nullable values are {num1}, {num2}, {boolval}");
+
+            // The Null coalescing operator ??
+            // As per the MSDN definition: The ?? operator is called the null - coalescing operator 
+            // and is used to define a default value for nullable value types or reference types.
+            // It returns the left - hand operand if the operand is not null; otherwise, it returns the right operand. 
+            // It is used to assign a default value to a variable when the value is null.
+            string name = null;
+            string myname = name ?? "Default Name";
+            Console.WriteLine(myname);
+        }
+
+        public static void AbstractInheritanceExamples()
+        {
+            Cube cube1 = new Cube(7);
+            cube1.GetInfo();
+
+            Sphere sphere1 = new Sphere(7);
+            sphere1.GetInfo();
         }
     }
 }
